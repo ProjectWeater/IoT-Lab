@@ -79,17 +79,17 @@
 
             <div class="container">
                 <div class="row">
-                <div class="card">
+                <div class="card-all">
                     <div class="card-wind-speed" id="wind-speed">
                         <span>Temperature</span>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card-all">
                     <div class="card-wind-speed1" id="wind-speed1">
                         <span>Humidity</span>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card-all">
                     <div class="card-wind-vane" id="wind-vane">
                         <span>LED</span>
                     </div>

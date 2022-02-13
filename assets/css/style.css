@@ -1590,3 +1590,12 @@ a.linkedin-bg:hover {
   height: 500px;
   width: 100%
 }
+.card-all {
+    font-size: 20px;
+    width: 100%;
+    height: 140px;
+    padding: 10px;
+    background: linear-gradient(#d8d8d8, #464646);
+    border-radius: 10px;
+
+}
