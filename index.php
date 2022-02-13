@@ -78,22 +78,25 @@
         <section class="site-section subpage-site-section section-contact-us">
 
             <div class="container">
-                <div class="row">
-                <div class="card-all">
-                    <div class="card-wind-speed" id="wind-speed">
-                        <span>Temperature</span>
+                <div  id="grid" class="row">
+                <div class="col-lg-4 col-md-4 col-xs-6" data-groups='["webdesign"]'>
+                        <div class="portfolio-item">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
                     </div>
-                </div>
-                <div class="card-all">
-                    <div class="card-wind-speed1" id="wind-speed1">
-                        <span>Humidity</span>
+                    <div class="col-lg-4 col-md-4 col-xs-6" data-groups='["mobileapp"]'>
+                        <div class="portfolio-item">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
                     </div>
-                </div>
-                <div class="card-all">
-                    <div class="card-wind-vane" id="wind-vane">
-                        <span>LED</span>
+                    <div class="col-lg-4 col-md-4 col-xs-6" data-groups='["illustration"]'>
+                        <div class="portfolio-item">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
                     </div>
-                </div>
                 </div>
             </div>
             
