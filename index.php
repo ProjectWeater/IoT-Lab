@@ -79,22 +79,21 @@
 
             <div class="container">
                 <div  id="grid" class="row">
-                <div class="col-lg-4 col-md-4 col-xs-6" data-groups='["webdesign"]'>
+                <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            <h4 class="portfolio-item-title">Temperature</h4>
+                            <a href="https://thingspeak.com/channels/1645985/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
                         </div><!-- /.portfolio-item -->
                     </div>
-                    <div class="col-lg-4 col-md-4 col-xs-6" data-groups='["mobileapp"]'>
+                    <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            <h4 class="portfolio-item-title">Humidity</h4>
+                            <a href="https://thingspeak.com/channels/1645985/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
                         </div><!-- /.portfolio-item -->
                     </div>
-                    <div class="col-lg-4 col-md-4 col-xs-6" data-groups='["illustration"]'>
+                    <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
-                            <h4 class="portfolio-item-title">Portfolio item</h4>
-                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            <h4 class="portfolio-item-title">LED</h4>
                         </div><!-- /.portfolio-item -->
                     </div>
                 </div>
