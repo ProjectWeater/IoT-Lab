@@ -1600,3 +1600,11 @@ a.linkedin-bg:hover {
     margin-top: 5rem;
 
 }
+
+* {
+    font-size: 1rem;
+}
+
+html {
+    font-size: calc(100% + 0.8vmin);
+}
