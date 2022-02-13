@@ -51,7 +51,7 @@
 
                 <div class="navbar-header">
                    
-                    <a href="index.html" class="site-title"><span>Weather</span>Station</a>
+                    <a href="index.php" class="site-title"><span>Weather</span>Station</a>
 
                 </div><!-- /.navbar-header -->
 
@@ -62,10 +62,12 @@
     <div id="hero" class="hero overlay subpage-hero contact-hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Contact</h1>
+                <h1>Weather</h1>
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Contact</li>
+                  <li class="breadcrumb-item"><a href="#">Temperature</a></li>
+                  <li class="breadcrumb-item"><a href="#">Humidity</a></li>
+                  <li class="breadcrumb-item"><a href="#">LED</a></li>
                 </ol>
             </div><!-- /.hero-text -->
         </div><!-- /.hero-content -->
