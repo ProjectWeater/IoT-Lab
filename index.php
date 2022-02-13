@@ -55,36 +55,6 @@
 
                 </div><!-- /.navbar-header -->
 
-                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-
-<li><a href="index.html">Home</a></li>
-<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<i class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
-
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-
-</li>
-<li><a href="portfolio.html">Portfolio</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li class="active"><a href="contact.html">Contact</a></li>
-<li><a href="ui-elements.html">UI Elements</a></li>
-
-</ul>
-<!-- 
-                    <ul class="nav navbar-nav navbar-center">
-
-                        <liclass="active"><a href="index.php">Home</a></li>
-                        <li><a href="portfolio.php">Temperature</a></li>
-                        <li><a href="blog.php">Humidity</a></li>
-                        <li><a href="LED.php">LED</a></li>
-                        
-                    </ul> -->
-
-                </div>
-
             </div>   
         </nav><!-- /.site-navigation -->
     </header><!-- /#mastheaed -->
