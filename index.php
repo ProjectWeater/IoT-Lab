@@ -97,6 +97,7 @@
                         <div class="portfolio-item">
                             <h4 class="portfolio-item-title">LED</h4>
                             <span id="led_data" style="text-align: center;"></span>
+                            <a id="onled">ON-OFF</a>
                         </div><!-- /.portfolio-item -->
                     </div>
                 </div>
@@ -134,7 +135,8 @@
                 var datatemp = parseFloat(temp).toFixed(2);
 
                 //ข้อมูลความชื้น
-                var datahum = data.feeds[0].field2;
+                var hum = data.feeds[0].field2;
+                var datahum = parseFloat(hum).toFixed(2);
 
                 //ข้อมูล led
                 var status = data.feeds[0].field3;
@@ -154,6 +156,17 @@
 
     $(() =>{
         loaddata();
+        $("#onled").click(() =>{
+            var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
+            var url2
+            var status = data.feeds[0].field3;
+            if(status == 1){
+                url2 = "https://api.thingspeak.com/update?api_key=8F7TFYFQT33JWTX5&field3=0"
+            }else {
+                url2 = "https://api.thingspeak.com/update?api_key=8F7TFYFQT33JWTX5&field3=1"
+            }
+            
+        });
     })
 
     </script>
