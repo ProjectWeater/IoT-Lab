@@ -82,14 +82,14 @@
                 <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
                             <h4 class="portfolio-item-title">Temperature</h4>
-                            <span id="#temp_data"></span>
+                            <span id="#temp_data"></span><span> ํ C</span>
                             <a href="https://thingspeak.com/channels/1645985/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
                         </div><!-- /.portfolio-item -->
                     </div>
                     <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
                             <h4 class="portfolio-item-title">Humidity</h4>
-                            <span id="#humidity_data"></span>
+                            <span id="#humidity_data"></span><span> % </span>
                             <a href="https://thingspeak.com/channels/1645985/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
                         </div><!-- /.portfolio-item -->
                     </div>
