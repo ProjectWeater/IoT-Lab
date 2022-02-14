@@ -155,11 +155,12 @@
     }
 
     $(() =>{
-        loaddata();
-        $("#onled").click(() =>{
-            var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
+        loaddata();\
+        var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
             var url2
             var status = data.feeds[0].field3;
+        $("#onled").click(() =>{
+            
             if(status == 1){
                 url2 = "https://api.thingspeak.com/update?api_key=8F7TFYFQT33JWTX5&field3=0"
             }else {
