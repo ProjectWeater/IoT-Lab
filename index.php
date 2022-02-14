@@ -82,18 +82,21 @@
                 <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
                             <h4 class="portfolio-item-title">Temperature</h4>
+                            <span id="#temp_data"></span>
                             <a href="https://thingspeak.com/channels/1645985/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
                         </div><!-- /.portfolio-item -->
                     </div>
                     <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
                             <h4 class="portfolio-item-title">Humidity</h4>
+                            <span id="#humidity_data"></span>
                             <a href="https://thingspeak.com/channels/1645985/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
                         </div><!-- /.portfolio-item -->
                     </div>
                     <div class="col-lg-4 col-md-4 col-xs-6" >
                         <div class="portfolio-item">
                             <h4 class="portfolio-item-title">LED</h4>
+                            <span id="#led_data"></span>
                         </div><!-- /.portfolio-item -->
                     </div>
                 </div>
@@ -104,7 +107,41 @@
 
     </main><!-- /#main -->
 
+    <script>
+        function loaddata() {
+        var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
+        $.getJSON(url)
+            .done((data) => {
+                console.log(data)
 
+                //ข้อมูลอุณหภูมิ
+                var temp = data.feeds[0].field1;
+                var datatemp = parseFloat(temp).toFixed(2);
+
+                //ข้อมูลความชื้น
+                var datahumidity = data.feeds[0].field2;
+
+                //ข้อมูล led
+                var status = data.feeds[0].field3;
+
+                if(status == 0){
+                    led = "LED OFF"
+                }else {
+                    led = "LED ON"
+                }
+                $("#temp_data").text(datatemp);
+                $("#humidity_data").text(datahumidity);
+                $("#led_data").text(led);
+            }).fail((xhr, status, err) => {
+                console.log("error")
+            })
+    }
+
+    $(() =>{
+        loaddata();
+    })
+
+    </script>
 
 
     <!-- Bootstrap core JavaScript
