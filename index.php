@@ -124,7 +124,7 @@
     <script>
         function loaddata() {
         var led;
-        var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=240";
+        var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
 
         $.getJSON(url)
             .done((data) => {
