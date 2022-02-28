@@ -70,6 +70,7 @@
                     <li class="breadcrumb-item"><a href="#">Temperature</a></li>
                     <li class="breadcrumb-item"><a href="#">Rain</a></li>
                     <li class="breadcrumb-item"><a href="#">Sunrise-Sunset</a></li>
+                    <li class="breadcrumb-item"><a href="#">Air Quality</a></li>
                 </ol>
             </div><!-- /.hero-text -->
         </div><!-- /.hero-content -->
