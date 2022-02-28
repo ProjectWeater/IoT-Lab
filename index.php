@@ -150,7 +150,7 @@
                     var pm = data.feeds[0].field3;
 
                     if (pm >=201){
-                        datapm = " Very Danger";
+                        datapm = "Very Danger";
                     }else if (pm >=101){
                         datapm = "Danger";
                     }else if (pm >=51){
