@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic Page Needs
@@ -43,6 +44,7 @@
     <![endif]-->
 
 </head>
+
 <body>
 
     <header id="masthead" class="site-header site-header-white">
@@ -50,12 +52,12 @@
             <div class="container">
 
                 <div class="navbar-header">
-                   
+
                     <a href="index.php" class="site-title"><span>Weather</span>Station</a>
 
                 </div><!-- /.navbar-header -->
 
-            </div>   
+            </div>
         </nav><!-- /.site-navigation -->
     </header><!-- /#mastheaed -->
 
@@ -64,10 +66,10 @@
             <div class="hero-text">
                 <h1>Weather</h1>
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Temperature</a></li>
-                  <li class="breadcrumb-item"><a href="#">Humidity</a></li>
-                  <li class="breadcrumb-item"><a href="#">LED</a></li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Temperature</a></li>
+                    <li class="breadcrumb-item"><a href="#">Rain</a></li>
+                    <li class="breadcrumb-item"><a href="#">Sunrise-Sunset</a></li>
                 </ol>
             </div><!-- /.hero-text -->
         </div><!-- /.hero-content -->
@@ -78,37 +80,45 @@
         <section class="site-section subpage-site-section section-contact-us">
 
             <div class="container">
-                <div  id="grid" class="row">
-                <div class="col-lg-4 col-md-4 col-xs-6" >
+                <div id="grid" class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="portfolio-item">
-                            <h4 class="portfolio-item-title">Temperature</h4>
-                            <span id="temp_data" style="text-align: center;"></span><span> ํ C</span>
-                            <a href="https://thingspeak.com/channels/1645985/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
-                        </div><!-- /.portfolio-item -->
+                            <h1 class="portfolio-item-title">Temperature</h1>
+                            <h2 class="title">Temperature</h2>
+                            <span id="temp_data" style="font-size: 16px;"></span><span style="font-size: 16px;"> ํ C</span>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-xs-6" >
+                    <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="portfolio-item">
-                            <h4 class="portfolio-item-title">Humidity</h4>
-                            <span id="humidity_data" style="text-align: center;"></span><span> % </span>
-                            <a href="https://thingspeak.com/channels/1645985/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></a>
-                        </div><!-- /.portfolio-item -->
+                            <h1 class="portfolio-item-title">Rain</h1>
+                            <h2 class="title">Rain</h2>
+                            <span id="rain_data" style="font-size: 16px;"></span>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-xs-6" >
+                    <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="portfolio-item">
-                            <h4 class="portfolio-item-title">LED</h4>
-                            <span id="led_data" style="text-align: center;"></span>
-                            <a id="onled">ON-OFF</a>
-                        </div><!-- /.portfolio-item -->
+                            <h1 class="portfolio-item-title">Sunrise-Sunset</h1>
+                            <h2 class="title">Sunrise-Sunset</h2>
+                            <span style="font-size: 16px;">Sunrise : </span><span id="sunrise_data" style="font-size: 16px;"></span><br>
+                            <span style="font-size: 16px;">Sunset : </span><span id="sunset_data" style="font-size: 16px;"> </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <h1 class="portfolio-item-title">Air Quality</h1>
+                            <h2 class="title">Air Quality</h2>
+                            <span id="pm_data" style="font-size: 16px;"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
         </section><!-- /.section-contact-us -->
 
 
     </main><!-- /#main -->
 
-    
+
 
 
     <!-- Bootstrap core JavaScript
@@ -122,61 +132,77 @@
     <script src="assets/js/jquery.shuffle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-        function loaddata() {
-        var led;
-        var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
-
-        $.getJSON(url)
-            .done((data) => {
-                console.log(data)
-
-                //ข้อมูลอุณหภูมิ
-                var temp = data.feeds[0].field1;
-                var datatemp = parseFloat(temp).toFixed(2);
-
-                //ข้อมูลความชื้น
-                var hum = data.feeds[0].field2;
-                var datahum = parseFloat(hum).toFixed(2);
-
-                //ข้อมูล led
-                var status = data.feeds[0].field3;
-
-                if(status == 0){
-                    led = "LED OFF"
-                }else {
-                    led = "LED ON"
-                }
-                $("#temp_data").text(datatemp);
-                $("#humidity_data").text(datahum);
-                $("#led_data").text(led);
-            }).fail((xhr, status, err) => {
-                console.log("error")
-            })
-    }
-
-    $(() =>{
-        loaddata();
-        var url = "https://api.thingspeak.com/channels/1645985/feeds.json?results=1";
-            var url2
-        $("#onled").click(() =>{
+        function loaddata1() {
+            var url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+            var datapm;
             $.getJSON(url)
-            .done((data) => {
-                console.log(data)
-                //ข้อมูล led
-            if(status == 1){
-                url2 = "https://api.thingspeak.com/update?api_key=8F7TFYFQT33JWTX5&field3=0"
-            }else {
-                url2 = "https://api.thingspeak.com/update?api_key=8F7TFYFQT33JWTX5&field3=1"
-            }
-                var status = data.feeds[0].field3;
-            }).fail((xhr, status, err) => {
-                console.log("error")
-            })
-            
-            
-        });
-    })
+                .done((data) => {
+                    console.log(data)
+
+                    var temp = data.feeds[0].field1;
+                    var datatemp = parseFloat(temp).toFixed(2);
+
+                    var rain = data.feeds[0].field6;
+                    var datarain = parseFloat(rain).toFixed(2);
+                    
+
+                    var pm = data.feeds[0].field3;
+
+                    if (pm >=201){
+                        datapm = " Very Danger";
+                    }else if (pm >=101){
+                        datapm = "Danger";
+                    }else if (pm >=51){
+                        datapm = "Moderate";
+                    }else if (pm >=26){
+                        datapm = "Good";
+                    }else{
+                        datapm = "Very Good";
+                    }
+
+                    if (datarain >=90.1){
+                        lv_datarain = "Very Heavy Rain";
+                    }else if (datarain >=35.1){
+                        lv_datarain = "Heavy Rain";
+                    }else if (datarain >=10.1){
+                        lv_datarain = "Moderate Rain";
+                    }else if (datarain >=0.1){
+                        lv_datarain = "Light Rain";
+                    }else{
+                        lv_datarain = "No Rain";
+                    }
+
+                    $("#temp_data").text(datatemp);
+                    $("#rain_data").text(lv_datarain);
+                    $("#pm_data").text(datapm);
+                }).fail((xhr, status, err) => {
+                    console.log("error")
+                })
+        }
+        function loaddata2() {
+            var url2 = "https://api.sunrise-sunset.org/json?";
+            $.getJSON(url2)
+                .done((data) => {
+                    console.log(data)
+
+                    var datasunset = data.results.sunset;
+
+                    var datasunrise = data.results.sunrise;
+
+                    $("#sunset_data").text(datasunset);
+                    $("#sunrise_data").text(datasunrise);
+                }).fail((xhr, status, err) => {
+                    console.log("error")
+                })
+        }
+
+        $(() => {
+            loaddata1();
+            loaddata2();
+        })
+
 
     </script>
 </body>
+
 </html>

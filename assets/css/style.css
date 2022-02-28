@@ -1000,7 +1000,7 @@ html, body {
     top: 0;
     right: 100%;
     bottom: 0;
-    background-color: #f5f5f8;
+    background-color: #dcdcdc;
     transition: right 0.25s ease-in-out;
     -moz-transition: right 0.25s ease-in-out;
     -webkit-transition: right 0.25s ease-in-out;
@@ -1607,4 +1607,9 @@ a.linkedin-bg:hover {
 
 html {
     font-size: calc(100% + 0.8vmin);
+}
+
+.title {
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
 }
